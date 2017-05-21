@@ -8,5 +8,5 @@ a.setData(data)
 
 for i in a:
     print(i)
-    print(type(i))
+    print((type(i)))
 

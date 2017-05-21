@@ -174,7 +174,7 @@ def Run(module_name, module_desc, req_type, req_format, conv_func, arg_parser = 
         wardenclient = warden_client.Client(**config)
 
     # Check if a whitelist is set, parse the file and prepare context for binary search
-    import ip_prefix_search
+    from . import ip_prefix_search
     if args.srcwhitelist_file:
         if 'ipaddr SRC_IP' in req_format.split(","):
             srcwhitelist = ip_prefix_search.IPPSContext.fromFile(args.srcwhitelist_file)
@@ -280,7 +280,7 @@ def Run(module_name, module_desc, req_type, req_format, conv_func, arg_parser = 
             # Convert timestamps from string to Date format
             idea2['DetectTime'] = datetime.strptime(idea2['DetectTime'], "%Y-%m-%dT%H:%M:%SZ")
             for i in [ 'CreateTime', 'EventTime', 'CeaseTime' ]:
-                if idea2.has_key(i):
+                if i in idea2:
                     idea2[i] = datetime.strptime(idea2[i], "%Y-%m-%dT%H:%M:%SZ")
 
             try:

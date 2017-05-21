@@ -17,6 +17,6 @@ while True:
     if len(data) <= 1:
         break
     rec.setData(data)
-    print(rec.strRecord())
+    print((rec.strRecord()))
     trap.send(data)
 trap.finalize()

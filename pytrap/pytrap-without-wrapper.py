@@ -24,8 +24,8 @@ def mainLoop():
         if len(a) <= 1:
             break
         num = num + 1
-    print("SSH src port count: {}".format(numport))
-    print("Total flows processed: {}".format(num))
+    print(("SSH src port count: {}".format(numport)))
+    print(("Total flows processed: {}".format(num)))
 
 mainLoop()
 

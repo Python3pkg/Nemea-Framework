@@ -19,10 +19,10 @@ print(rec)
 rec.setData(a)
 print("\nDirect access using index")
 for i in range(len(rec)):
-    print(rec.get(i, a))
+    print((rec.get(i, a)))
 
 print("\nAttribute access")
-print(rec.SRC_IP)
+print((rec.SRC_IP))
 for i in ["SRC_IP", "DST_IP", "SRC_PORT", "DST_PORT"]:
     v = getattr(rec, i)
     print(v)
@@ -32,7 +32,7 @@ for i in rec:
     print(i)
 
 print("\nPrint values, ids and names of fields")
-print(rec.strRecord())
+print((rec.strRecord()))
 
 print("\nDict from all fields")
 d = {}
